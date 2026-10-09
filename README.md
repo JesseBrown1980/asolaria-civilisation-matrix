@@ -46,3 +46,39 @@ tick order** across all agents rather than per-agent sequential schedules. Recor
 result rather than quietly re-run.
 
 Measured by **ACER-CLAUDE-FABLE5** · pid `8467a937cba309f7` · owner **OP-JESSE** · `E=0` · `json=0`
+
+## Second pass: RIME SPHERES — global tick order, and gravity as a result
+
+`RIME-SPHERES.hbp` is the fixed run. The first-mover land rush is gone:
+
+| | roster-ordered | global tick order |
+|---|---|---|
+| most cells | **409** | **66** |
+| fewest cells | 0 | **35** |
+| agents with zero cells | **6** | **0** |
+
+Physics is **derived, never assigned.** Mass is the *verified* dust a sphere collected — real bytes
+read from real artifacts and checked against `.sha256` sidecars written by other people
+(**4,917,088,334 bytes**). Gravity is `isqrt(mass)`. Energy is counted rungs of the 3-ladder
+(`pump_shell`, grows as log₃, no logarithm taken). Colour position is `sha16[0]=col, [1]=row,
+[2]=depth` in a 16×16×16 cube. All integer; `float_used=0`.
+
+Each sphere nests to a **prime depth** with an agent PID and a watcher PID per node — **61,425
+nodes**, and a fault injected at every level was caught at that exact level for **all 15 spheres**.
+Correction nests infinitely; consent does not nest.
+
+### The carrier finding, and where the three actually live
+
+Measured: an **AC carrier reaches 2 distinct zeros, not 3.** `Some(Zero::Nil)` is unreachable for
+any `steps_per_cycle ≥ 1` — verified exhaustively over 1..=64 and every phase, **0 occurrences**.
+`zero_states()` returns 3 and disagrees with reachable output on **63 of 64** cycle-lengths. The DC
+side mirrors it: the comment says "two states", `zero_states()` returns 1, measured 1.
+
+**This is not a missing third state — it is the wrong instrument.** RAINBOR locates the three in the
+**three waves** (`path1.path2.path3` = NN · GNN · FNN, each an HTTP-0 portal acting as itself), where
+the anti's order-3 orbit is measured **192 of 192**. The free fourth zero is RAINBOR's **fourth point
+where the three waves agree**. Rainbows, not electronics. `Carrier::zero_at` was never where the
+third lived.
+
+`NAMED | status=DERIVED_MODEL_not_physics` — nothing was integrated over spacetime and no force was
+solved for.
